@@ -6,7 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'https://milenammay.github.io/test-gh-pages/',
+  base: 'https://milenammay.github.io/sustainability-walk/',
   plugins: [
     vue(),
     vueJsx(),
