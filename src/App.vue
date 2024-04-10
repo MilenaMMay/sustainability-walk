@@ -6,6 +6,11 @@ import 'leaflet/dist/leaflet.css'
 import * as L from 'leaflet'
 import type { LatLng } from 'leaflet'
 
+const markerIcon = L.icon({
+  iconUrl: './src/assets/marker-icon.png',
+  shadowUrl: './src/assets/marker-shadow.png'
+})
+
 const universityCologne: LatLng = L.latLng(50.928489708499356, 6.929532458566885)
 const zoomLevel = 18 // maximum zoom level so that we start as close as possible
 const minZoom = 15 // avoids that users zoom out of the relevant space
@@ -28,7 +33,7 @@ onMounted(() => {
   }).addTo(sustainabilityMap)
 
   places.forEach((place) => {
-    const marker = L.marker(place.coordinates).addTo(sustainabilityMap)
+    const marker = L.marker(place.coordinates, { icon: markerIcon }).addTo(sustainabilityMap)
     marker.bindPopup(place.name)
   })
 })
