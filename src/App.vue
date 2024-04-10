@@ -1,6 +1,24 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+import 'leaflet/dist/leaflet.css'
+import * as L from 'leaflet'
+
+const sustainabilityMap = ref(null)
+
+onMounted(() => {
+  const universityCologne = [50.928489708499356, 6.929532458566885]
+  const zoomLevel = 18 // maximum zoom level so that we start as close as possible
+  const minZoom = 15 // avoids that users zoom out of the relevant space
+
+  sustainabilityMap.value = L.map('map').setView(universityCologne, zoomLevel)
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    minZoom: minZoom
+  }).addTo(sustainabilityMap.value)
+})
 </script>
 
 <template>
@@ -16,6 +34,11 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
     </div>
   </header>
+
+  <div>
+    <h3>An interactive leaflet map</h3>
+    <div id="map" style="height: 90vh"></div>
+  </div>
 
   <RouterView />
 </template>
