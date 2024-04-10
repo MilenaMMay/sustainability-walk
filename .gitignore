@@ -1,33 +1,33 @@
 # Logs
-code/logs
+logs
 *.log
-code/npm-debug.log*
-code/yarn-debug.log*
-code/yarn-error.log*
-code/pnpm-debug.log*
-code/lerna-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-code/node_modules
-code/.DS_Store
-code/dist
-code/dist-ssr
-code/coverage
-code/*.local
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
 
-code/cypress/videos/
-code/cypress/screenshots/
+/cypress/videos/
+/cypress/screenshots/
 
 # Editor directories and files
-code/.vscode/*
-!code/.vscode/extensions.json
-code/.idea
-code/*.suo
-code/*.ntvs*
-code/*.njsproj
-code/*.sln
-code/*.sw?
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-code/*.tsbuildinfo
+*.tsbuildinfo
 
-code/test-results/
-code/playwright-report/
+test-results/
+playwright-report/
