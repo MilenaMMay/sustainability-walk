@@ -6,9 +6,12 @@ import 'leaflet/dist/leaflet.css'
 import * as L from 'leaflet'
 import type { LatLng } from 'leaflet'
 
+import iconUrl from './assets/marker-icon.png'
+import shadowUrl from './assets/marker-shadow.png'
+
 const markerIcon = L.icon({
-  iconUrl: './src/assets/marker-icon.png',
-  shadowUrl: './src/assets/marker-shadow.png'
+  iconUrl: iconUrl,
+  shadowUrl: shadowUrl
 })
 
 const universityCologne: LatLng = L.latLng(50.928489708499356, 6.929532458566885)
