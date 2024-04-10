@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
+import { onMounted } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 
 import 'leaflet/dist/leaflet.css'
@@ -10,8 +9,6 @@ import type { LatLng } from 'leaflet'
 const universityCologne: LatLng = L.latLng(50.928489708499356, 6.929532458566885)
 const zoomLevel = 18 // maximum zoom level so that we start as close as possible
 const minZoom = 15 // avoids that users zoom out of the relevant space
-
-//const sustainabilityMap = ref(null)
 
 interface Place {
   name: string
@@ -39,24 +36,18 @@ onMounted(() => {
 
 <template>
   <header>
+    <!-- TODO: Logo University Cologne -->
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <HelloWorld msg="Sustainability Walk Universitat zu Köln" />
     </div>
   </header>
 
   <div>
-    <h3>An interactive leaflet map</h3>
-    <div id="map" style="height: 90vh"></div>
+    <h2>TODO: Erklärung, was ist der Sustainability Walk?</h2>
+    <div id="map" style="height: 60vh"></div>
   </div>
-
-  <RouterView />
 </template>
 
 <style scoped>
