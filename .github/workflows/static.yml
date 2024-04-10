@@ -36,6 +36,7 @@ jobs:
       - name: Build project
         run: |
           npm install
+          mkdir dist
           cp node_modules/leaflet/dist/images/* dist
           npm run build
       - name: Upload artifact
