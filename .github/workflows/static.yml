@@ -37,7 +37,8 @@ jobs:
         run: |
           npm install
           mkdir dist
-          cp node_modules/leaflet/dist/images/* dist
+          mkdir dist/assets
+          cp node_modules/leaflet/dist/images/* dist/assets
           npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
